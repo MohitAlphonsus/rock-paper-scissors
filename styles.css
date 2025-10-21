@@ -251,7 +251,6 @@ h3 {
   inset: 0;
   border-radius: 50%;
   background-color: var(--color-medium-green);
-  scale: 1;
   opacity: 0;
   z-index: -1;
   animation: ringPulse 3s infinite;
@@ -259,20 +258,23 @@ h3 {
 
 .winner-ring::after {
   animation-delay: 0s;
+  scale: 1;
 }
 
 .result-winner::before {
   animation-delay: 1s;
+  scale: 1.5;
 }
 
 .result-winner::after {
   animation-delay: 2s;
+  scale: 2;
 }
 
 @keyframes ringPulse {
   from {
     scale: 1;
-    opacity: .8;
+    opacity: 1;
   }
 
   to {
