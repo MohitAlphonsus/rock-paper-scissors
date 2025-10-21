@@ -58,7 +58,7 @@ function handleUpdateUI(
 				<div class="choice choice--${playerChoice} ${
 		whoWon === PLAYER ? 'result-winner' : ''
 	} ">
-						<img src="./assets/${playerChoice}.png" />
+						<img src="/assets/${playerChoice}.png" />
 				</div>
 		</div>
 		<div class="result-message">
@@ -72,7 +72,7 @@ function handleUpdateUI(
 				<div class="choice choice--${computerChoice} ${
 		whoWon === COMPUTER ? 'result-winner' : ''
 	}">
-						<img src="./assets/${computerChoice}.png" />
+						<img src="/assets/${computerChoice}.png" />
 				</div>
 		</div>
   `;
