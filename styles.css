@@ -269,6 +269,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 2rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -481,5 +482,50 @@ h3 {
   .game__score {
     flex-direction: row;
     width: 100%;
+  }
+
+  .message span:first-child {
+    font-size: 4rem;
+  }
+
+  .message span:last-child {
+    font-size: 2rem;
+  }
+
+  .choice {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .btn--play-again {
+    padding: 1rem;
+  }
+}
+
+/* 430px */
+@media(max-width:26.87em) {
+  .message span:first-child {
+    font-size: 3rem;
+  }
+
+  .message span:last-child {
+    font-size: 1.8rem;
+  }
+
+  .btn--play-again,
+  .btn-footer {
+    font-size: 1.4rem;
+  }
+
+  .winning-img img {
+    width: 80%;
+  }
+
+  .winning-message h2 {
+    font-size: 4rem;
+  }
+
+  .winning-message p {
+    font-size: 2rem;
   }
 }
