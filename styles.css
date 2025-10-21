@@ -77,7 +77,6 @@ h3 {
   border: 1px solid var(--color-white);
   border-radius: var(--radius-md);
   display: flex;
-  /* align-items: center; */
   justify-content: space-between;
   padding: 1rem;
   height: 20vh;
@@ -164,7 +163,7 @@ h3 {
 .choices__choice-scissors {
   position: absolute;
   top: -15%;
-  right: -20%;
+  right: -15%;
 }
 
 .choices__choice-paper {
@@ -194,16 +193,24 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
-.result-message span:nth-child(1) {
+.message span:first-child {
   font-size: 6rem;
 }
 
-.result-message span:nth-child(2) {
+.message span:last-child {
   font-size: 3rem;
 }
 
@@ -253,7 +260,7 @@ h3 {
 /* GAME WIN DISPLAY */
 
 .game-win-display {
-  /* display: none; */
+  display: none;
   height: calc(100vh - 2rem);
 }
 
@@ -296,6 +303,7 @@ h3 {
   justify-content: center;
   cursor: pointer;
   transition: all .2s;
+  position: relative;
 }
 
 /* this is for not to select img on click */
@@ -310,19 +318,19 @@ h3 {
   width: 50%;
 }
 
-.choice--rock {
+.choice--ROCK {
   border: 10px solid var(--color-rock);
 }
 
-.choice--scissors {
+.choice--SCISSORS {
   border: 10px solid var(--color-scissor);
 }
 
-.choice--scissors img {
+.choice--SCISSORS img {
   width: 30%;
 }
 
-.choice--paper {
+.choice--PAPER {
   border: 10px solid var(--color-paper);
 }
 
@@ -354,7 +362,7 @@ h3 {
 }
 
 #btn--next {
-  /* display: none; */
+  display: none;
 }
 
 /***********************/

@@ -26,62 +26,68 @@
 				<div class="game__scores">
 					<div class="game__score">
 						<span>Computer Score</span>
-						<span id="computer--score">0</span>
+						<span id="computer--score"></span>
 					</div>
 					<div class="game__score">
 						<span>Your Score</span>
-						<span id="player--score">0</span>
+						<span id="player--score"></span>
 					</div>
 				</div>
 			</header>
 
 			<!-- Game Body -->
-			<section class="game__body">
+			<section class="game__body" id="game-body">
 				<!-- Player Choice Display -->
 				<div class="player-choice-display" id="player-choice-display">
 					<div class="choices" id="choices">
-						<div
-							class="choices__choice-rock choice choice--rock"
-							data-choice="ROCK"
-						>
-							<img src="./assets/rock.png" alt="hand fist icon" />
+						<div class="choices__choice-rock">
+							<div class="choice choice--ROCK" data-choice="ROCK">
+								<img src="./assets/ROCK.png" alt="hand fist icon" />
+							</div>
 						</div>
-						<div
-							class="choices__choice-scissors choice choice--scissors"
-							data-choice="SCISSORS"
-						>
-							<img src="./assets/scissors.png" alt="hand scissors icon" />
+
+						<div class="choices__choice-scissors">
+							<div
+								class="choices__choice-scissors choice choice--SCISSORS"
+								data-choice="SCISSORS"
+							>
+								<img src="./assets/SCISSORS.png" alt="hand scissors icon" />
+							</div>
 						</div>
-						<div
-							class="choices__choice-paper choice choice--paper"
-							data-choice="PAPER"
-						>
-							<img src="./assets/paper.png" alt="hand icon" />
+						<div class="choices__choice-paper">
+							<div
+								class="choices__choice-paper choice choice--PAPER"
+								data-choice="PAPER"
+							>
+								<img src="./assets/PAPER.png" alt="hand icon" />
+							</div>
 						</div>
 					</div>
 				</div>
 
 				<!-- Choice Result Display -->
 				<div class="choice-result-display" id="choice-result-display">
-					<div class="result">
-						<div class="winner winner-ring">
+					<div class="result" id="result">
+						<!-- <div class="winner winner-ring">
 							<div class="choice choice--rock result-winner">
 								<img src="./assets/rock.png" alt="hand fist icon" />
 							</div>
 						</div>
 						<div class="result-message">
-							<span>You Win</span>
-							<span>Against PC</span>
+							<div class="message">
+								<span>You Win</span>
+								<span>Against PC</span>
+							</div>
 							<button class="btn--play-again">Play again</button>
 						</div>
 						<div class="choice choice--paper">
 							<img src="./assets/paper.png" alt="hand fist icon" />
-						</div>
+						</div> -->
 					</div>
 				</div>
 
 				<!-- Game Win Display -->
-				<div class="game-win-display">
+				<div class="game-win-display" id="game-win-display">
 					<div class="winning-message">
 						<picture class="winning-img">
 							<img src="./assets/win-img.svg" />
