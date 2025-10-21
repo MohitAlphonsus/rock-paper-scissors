@@ -54,7 +54,7 @@ function handleUpdateUI(
 	console.log(playerChoice, computerChoice, whoWon);
 
 	const htmlForchoiceResultDisplay = `
-    <div class="winner ${whoWon === PLAYER ? 'winner-ring' : ''} ">
+    <div class="player ${whoWon === PLAYER ? 'winner-ring' : ''} ">
 				<div class="choice choice--${playerChoice} ${
 		whoWon === PLAYER ? 'result-winner' : ''
 	} ">
@@ -68,7 +68,7 @@ function handleUpdateUI(
 				</div>
 				<button class="btn--play-again">Play again</button>
 		</div>
-    <div class="winner ${whoWon === COMPUTER ? 'winner-ring' : ''}">
+    <div class="computer ${whoWon === COMPUTER ? 'winner-ring' : ''}">
 				<div class="choice choice--${computerChoice} ${
 		whoWon === COMPUTER ? 'result-winner' : ''
 	}">

@@ -214,12 +214,36 @@ h3 {
   font-size: 3rem;
 }
 
+.player,
+.computer {
+  position: relative;
+}
+
+.player::before,
+.computer::before {
+  position: absolute;
+  z-index: 10;
+  top: -50%;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.player::before {
+  content: 'You Picked';
+
+}
+
+.computer::before {
+  content: 'PC Picked'
+}
+
 .winner-ring {
   position: relative;
   display: inline-block;
 }
 
-.winner-ring::before,
+.winner-ring::after,
 .result-winner::before,
 .result-winner::after {
   content: "";
@@ -233,7 +257,7 @@ h3 {
   animation: ringPulse 3s infinite;
 }
 
-.winner-ring::before {
+.winner-ring::after {
   animation-delay: 0s;
 }
 
@@ -246,12 +270,12 @@ h3 {
 }
 
 @keyframes ringPulse {
-  0% {
+  from {
     scale: 1;
-    opacity: 0.8;
+    opacity: .8;
   }
 
-  100% {
+  to {
     scale: 2;
     opacity: 0;
   }
@@ -415,17 +439,18 @@ h3 {
 
 .btn-close {
   position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
+  top: -1.8rem;
+  right: -1.8rem;
   background: none;
   border: none;
   background-color: var(--color-red);
   color: var(--color-white);
-  height: 3rem;
-  width: 3rem;
+  border: 3px solid var(--color-white);
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 
