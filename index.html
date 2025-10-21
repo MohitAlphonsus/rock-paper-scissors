@@ -16,8 +16,8 @@
 	</head>
 	<body>
 		<main class="game">
-			<!-- game header -->
-			<header class="game__header">
+			<!-- Game Header -->
+			<header class="game__header" id="game-header">
 				<h1>
 					<span>ROCK</span>
 					<span>PAPER</span>
@@ -35,15 +35,87 @@
 				</div>
 			</header>
 
-			<!-- game body -->
+			<!-- Game Body -->
 			<section class="game__body">
-				<div class="initial-display"></div>
-				<div class="choice-display"></div>
-				<div class="game-over-display"></div>
+				<!-- Player Choice Display -->
+				<div class="player-choice-display" id="player-choice-display">
+					<div class="choices" id="choices">
+						<div
+							class="choices__choice-rock choice choice--rock"
+							data-choice="ROCK"
+						>
+							<img src="./assets/rock.png" alt="hand fist icon" />
+						</div>
+						<div
+							class="choices__choice-scissors choice choice--scissors"
+							data-choice="SCISSORS"
+						>
+							<img src="./assets/scissors.png" alt="hand scissors icon" />
+						</div>
+						<div
+							class="choices__choice-paper choice choice--paper"
+							data-choice="PAPER"
+						>
+							<img src="./assets/paper.png" alt="hand icon" />
+						</div>
+					</div>
+				</div>
+
+				<!-- Choice Result Display -->
+				<div class="choice-result-display" id="choice-result-display">
+					<div class="result">
+						<div class="winner winner-ring">
+							<div class="choice choice--rock result-winner">
+								<img src="./assets/rock.png" alt="hand fist icon" />
+							</div>
+						</div>
+						<div class="result-message">
+							<span>You Win</span>
+							<span>Against PC</span>
+							<button class="btn--play-again" id="btn--play-again">
+								Play again
+							</button>
+						</div>
+						<div class="choice choice--paper">
+							<img src="./assets/paper.png" alt="hand fist icon" />
+						</div>
+					</div>
+				</div>
+
+				<!-- Game Win Display -->
+				<div class="game-win-display"></div>
+
+				<!-- Game Rules -->
+				<div class="rules-window" id="rules-window">
+					<button class="btn-close" id="btn--rules-close">&times;</button>
+					<h2>Game Rules</h2>
+					<ul>
+						<li>
+							Rock beats scissors, scissors beat paper, and paper beats rock.
+						</li>
+						<li>
+							Agree ahead of time whether you’ll count off “rock, paper,
+							scissors, shoot” or just “rock, paper, scissors.”
+						</li>
+						<li>
+							Use rock, paper, scissors to settle minor decisions or simply play
+							to pass the time
+						</li>
+						<li>
+							If both players lay down the same hand, each player lays down
+							another hand
+						</li>
+					</ul>
+				</div>
+
+				<!-- Footer Buttons -->
+				<footer class="footer-buttons">
+					<button class="btn-footer" id="btn--rules-open">Rules</button>
+					<button class="btn-footer" id="btn--next">Next</button>
+				</footer>
 			</section>
 
-			<!--  overlay modal -->
-			<div class="overlay"></div>
+			<!-- Game Footer -->
 		</main>
 	</body>
 </html>

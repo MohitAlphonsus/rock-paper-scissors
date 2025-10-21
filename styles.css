@@ -1,5 +1,6 @@
 :root {
   --color-light-green: #8CC461;
+  --color-medium-green: #3B6720;
   --color-dark-green: #004429;
   --color-white: #fff;
   --color-dark: #222;
@@ -39,25 +40,52 @@ h3 {
 }
 
 /***********************/
+/***** UTILITY CLASSES *****/
+/************************/
+
+.btn--play-again {
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  padding: 1rem 3rem;
+  border-radius: var(--radius-md);
+}
+
+
+/***********************/
 /***** MAIN STYLING *****/
 /************************/
 
+
 .game {
-  width: 100rem;
+  width: 80rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
+
+/* GAME HEADER */
 
 .game__header {
   border: 1px solid var(--color-white);
   border-radius: var(--radius-md);
   display: flex;
+  /* align-items: center; */
   justify-content: space-between;
   padding: 1rem;
+  height: 20vh;
 }
 
 .game__header h1 {
   font-size: 3rem;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: .5rem;
 }
@@ -95,13 +123,220 @@ h3 {
 }
 
 
+/* GAME BODY */
+.game__body {
+  height: calc(80vh - 2rem);
+}
+
+/* PLAYER CHOICE DISPLAY */
+
+.player-choice-display,
+.choice-result-display,
+.game-win-display {
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choices {
+  height: 22rem;
+  width: 22rem;
+  position: relative;
+}
+
+.choices::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url(./assets/bg-triangle.svg) no-repeat center center/cover;
+  z-index: -1;
+}
+
+.choices__choice-rock {
+  position: absolute;
+  top: -15%;
+  left: -20%;
+}
+
+.choices__choice-scissors {
+  position: absolute;
+  top: -15%;
+  right: -20%;
+}
+
+.choices__choice-paper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* CHOICE RESULT DISPLAY */
+
+.choice-result-display {
+  display: none;
+}
+
+.result {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.result-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.result-message span:nth-child(1) {
+  font-size: 6rem;
+}
+
+.result-message span:nth-child(2) {
+  font-size: 3rem;
+}
+
+.winner-ring {
+  position: relative;
+  display: inline-block;
+}
+
+.winner-ring::before,
+.result-winner::before,
+.result-winner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--color-medium-green);
+  scale: 1;
+  opacity: 0;
+  z-index: -1;
+  animation: ringPulse 3s infinite;
+}
+
+.winner-ring::before {
+  animation-delay: 0s;
+}
+
+.result-winner::before {
+  animation-delay: 1s;
+}
+
+.result-winner::after {
+  animation-delay: 2s;
+}
+
+@keyframes ringPulse {
+  0% {
+    scale: 1;
+    opacity: 0.8;
+  }
+
+  100% {
+    scale: 2;
+    opacity: 0;
+  }
+}
+
+/* GAME WIN DISPLAY */
+
+.game-win-display {
+  display: none;
+}
+
 /***********************/
-/***** MODAL AND OVERLAY *****/
+/***** CHOICE ICON BOX STYLING *****/
 /************************/
 
-/* .rules-modal {
+.choice {
+  height: 12rem;
+  width: 12rem;
+  background: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+/* this is for not to select img on click */
+.choice::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.choice img {
+  width: 50%;
+}
+
+.choice--rock {
+  border: 10px solid var(--color-rock);
+}
+
+.choice--scissors {
+  border: 10px solid var(--color-scissor);
+}
+
+.choice--scissors img {
+  width: 30%;
+}
+
+.choice--paper {
+  border: 10px solid var(--color-paper);
+}
+
+
+/***********************/
+/***** FOOTER BUTTONS *****/
+/************************/
+.footer-buttons {
   position: absolute;
   bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn-footer {
+  font: inherit;
+  font-size: 1.6rem;
+  background: none;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem 3rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#btn--next {
+  display: none;
+}
+
+/***********************/
+/***** RULES WINDOW *****/
+/************************/
+
+.rules-window {
+  position: absolute;
+  bottom: 8rem;
   right: 2rem;
   width: 25rem;
   border-radius: var(--radius-md);
@@ -109,22 +344,29 @@ h3 {
   background-color: var(--color-dark-green);
   padding: 2rem 2rem 2rem 3rem;
   z-index: 200;
+  display: none;
 }
 
-.rules-modal ul {
+.rules-window h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rules-window ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.rules-modal ul li {
+.rules-window ul li {
   font-size: 1.4rem;
   line-height: 1.6;
   position: relative;
 }
 
-.rules-modal ul li::before {
+.rules-window ul li::before {
   position: absolute;
   content: '';
   top: .6rem;
@@ -147,17 +389,8 @@ h3 {
   width: 3rem;
   border-radius: 50%;
   cursor: pointer;
+  font-size: 2rem;
 }
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .6);
-  z-index: 100;
-} */
 
 
 
