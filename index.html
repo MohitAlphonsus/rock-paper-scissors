@@ -3,12 +3,37 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<!-- google font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>ROCK_PAPER_SCISSORS</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<main class="game">
 			<!-- game header -->
-			<header class="game__header"></header>
+			<header class="game__header">
+				<h1>
+					<span>ROCK</span>
+					<span>PAPER</span>
+					<span>SCISSORS</span>
+				</h1>
+				<div class="game__scores">
+					<div class="game__score">
+						<span>Computer Score</span>
+						<span id="computer--score">0</span>
+					</div>
+					<div class="game__score">
+						<span>Your Score</span>
+						<span id="player--score">0</span>
+					</div>
+				</div>
+			</header>
 
 			<!-- game body -->
 			<section class="game__body">
